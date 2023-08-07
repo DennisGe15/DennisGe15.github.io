@@ -1,22 +1,274 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<!-- the head tag doesn't show up in the window, it only contains metadata -->
   <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>hase's boilerplate</title>
+    <title>Dennis's a1</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+
+    <style>
+      .link {
+    text-align: center; 
+}
+
+.container {
+    width: 90%;
+    margin: auto;    
+}
+
+button {
+    border: 0;
+    background: none;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    outline: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+  
+button::before, button::after {
+    box-sizing: inherit;
+    position: absolute;
+    content: '';
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+}
+  
+button::after {
+    bottom: 0;
+    right: 0;
+}
+  
+button::before {
+    top: 0;
+    left: 0;
+}
+  
+button:hover::before, button:hover::after {
+    width: 100%;
+    height: 100%;
+}
+  
+button:hover::before {
+    border-top-color: black;
+    border-right-color: black;
+    transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+}
+  
+button:hover::after {
+    border-bottom-color: black;
+    border-left-color: black;
+    transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out 1s;
+}
+
+      body{
+      background-color:#eaecf0;
+      color:#242323;
+      text-align: justify;
+      }
+      .main-wrapper{
+      margin:0px auto;
+      width:800px;
+      position:relative;
+      perspective:700px;
+          & input{
+              display:none;
+              &:checked  + label{
+              background-color:#4EC6DE;
+              }
+          }
+          & label{
+              display:inline-block;
+              padding: 12px 20px;
+              margin-right:3px;
+              cursor:pointer;
+              transition:background-color .3s;
+                  &:hover{
+                  background-color:#4EC6DE;
+                  }  
+              }
+      
+      }
+      .tabs > div{
+          width:700px;
+          height:220px;
+          position:absolute;
+          border:2px solid eaecf0;;
+          padding:10px 40px 30px;
+          transform:rotateX(-20deg);
+          transform-origin:top center;
+          opacity:0;
+          transition: opacity .3s, transform .8s ease;
+      }
+
+      #tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+      #tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+      #tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+      #tab-nav-4:checked ~ .tabs > div:nth-of-type(4),
+      #tab-nav-5:checked ~ .tabs > div:nth-of-type(5),
+      #tab-nav-6:checked ~ .tabs > div:nth-of-type(6),
+      #tab-nav-7:checked ~ .tabs > div:nth-of-type(7),
+      #tab-nav-8:checked ~ .tabs > div:nth-of-type(8),
+      #tab-nav-9:checked ~ .tabs > div:nth-of-type(9),
+      #tab-nav-10:checked ~ .tabs > div:nth-of-type(10),
+      #tab-nav-11:checked ~ .tabs > div:nth-of-type(11),
+      #tab-nav-12:checked ~ .tabs > div:nth-of-type(12),
+      #tab-nav-13:checked ~ .tabs > div:nth-of-type(13){
+        
+      transform:none;
+      opacity:1;
+      }
+    </style>
 
   </head>
 
   <body>
 
-    <h1>This is my boilerplate</h1>
+    <div class="container">
+      <div class="title">
+        <h1>NGV Interactive experience research</h1>
+        <h2>By Dennis Ge</h2>
+      </div>
+
+      <div class="test">
+        <img src="./NGV.png" alt="Welcome page of NGV" width="90%" title="Welcome page of National Gallery Victoria" />
+      </div>
+      <br>
+      <div class="link">
+        <a href="https://www.ngv.vic.gov.au"><button>NGV WEB PAGE</button></a>
+      </div>
+      <br>
+
+      <div class="main-wrapper">
+      
+        <input type="radio" name="tabs" id="tab-nav-1" checked />
+        <label for="tab-nav-1">Question 1</label>
+        
+        <input type="radio" name="tabs" id="tab-nav-2" />
+        <label for="tab-nav-2">Question 2</label>
+        
+        <input type="radio" name="tabs" id="tab-nav-3" />
+        <label for="tab-nav-3">Question 3</label>
+        
+        <input type="radio" name="tabs" id="tab-nav-4" />
+        <label for="tab-nav-4">Question 4</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-5" />
+        <label for="tab-nav-5">Question 5</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-6" />
+        <label for="tab-nav-6">Question 6</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-7" />
+        <label for="tab-nav-7">Question 7</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-8" />
+        <label for="tab-nav-8">Question 8</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-9" />
+        <label for="tab-nav-9">Question 9</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-10" />
+        <label for="tab-nav-10">Question 10</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-11" />
+        <label for="tab-nav-11">Question 11</label>
+  
+        <input type="radio" name="tabs" id="tab-nav-12" />
+        <label for="tab-nav-12">Question 12</label>
+        
+        <input type="radio" name="tabs" id="tab-nav-13" />
+        <label for="tab-nav-13">Question 13</label>
+           <div class="tabs">
+            
+            <div>
+              <h2>Question 1. What was the first thing you paid attention to when interacting with the experience?</h2>
+              <p><li>The first thing I paid attention to when interacting with the experience was the image of the homepage, since this is the webpage of national gallery Victoria. As an art website, I think it's great to have a lot of beautiful high-resolution images on the homepage.</li></p>
+            
+            </div>
+
+            <div>
+              <h2>Question 2. Spend two minutes with the experience and create a list of each of your discrete actions.</h2>
+              <ul>
+                <li>0s: First, I swiped my mouse to get a brief overview of the entire contents of the welcome page, which took me about 25 seconds.</li>
+                <li>25s: Then I saw the images at the top of the page, which automatically switch to the next page in a slideshow every 5 seconds. At the bottom right corner of the image are 6 small buttons that allow the user to quickly switch to a particular image. </li>
+                <li>50s: So I tried clicking on these points to get a quick overview of the 6 images. I think this is a good interaction design for the user to view the images quickly.</li>
+                <li>1m02s: Then I scrolled down, and in the long page below, the recent exhibitions in the gallery were displayed in left-right and right-left layout respectively, each exhibition was represented by a main title, a sub-title and a main picture, the main title introduced the content of the exhibition, the sub-title introduced the time of the exhibition and the way to book. </li>
+                <li>1m08s: I was attracted by one main picture which was full of sense of technology, so I clicked on it. </li>
+                <li>1m10s: When I clicked on this image, the webpage then jumped to another webpage related to this exhibition. I found that the main title of this webpage was the same as the main title of the main image just now, but this time the subtitle was richer in content, including the location of the exhibition, which was The Ian Potter Center, located at NGV Ground Level, NGV Design Studio. </li>
+                <li>1m20s: In the middle of the webpage were a few paragraphs of introduction to the exhibition, and at the bottom of the text was a wide image that I could click on to scroll to the right or to the left, but since I wasn't really interested in the content of the exhibition, I quickly exited the page and went back to the previous page. </li>
+                <li>1m26s: This time I scrolled up and was intrigued by the main title of the exhibition REMBRANDT: TRUE TO LIFE. When I clicked on the exhibition, the page jumped to a new page again.</li>
+                <li>1m30s: At the top of the new page, I saw a detailed description of the exhibition's protagonist and details of the exhibition, including when it was held, where it was held, what works were on display, and buttons to buy tickets for the exhibition. </li>
+                <li>1m45s: As the page continued to scroll down, the gallery images and themes of the exhibition appeared, and I could click on the main image of the theme I was interested in to jump to the corresponding theme. </li>
+              </ul>
+              <br>
+            </div>
+
+            <div>
+              <h2>Question 3. What part of the experience did you spend the most time engaging with?</h2>
+              <p><li>The part of the experience I spent the most time engaging with was looking at the images of the exhibition. Since I love photography, the exhibition images were the most appealing part of the website for me. Whenever I jumped to a new web page, I would look at the images first.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 4. What was the most common action in your two minute interaction with the experience?</h2>
+              <p><li>The most common action in my two minute interaction with the experience was scrolling and clicking on images and buttons. Since I'm an impatient person, I would choose to quickly skip over content that I'm not interested in.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 5. What is your impression of the intended primary goal of the interactive experience?</h3>
+              <p><li>As a photographer, I think the images selected by NGV for the exhibition are wonderful, as an art lover, I think the artists chosen for the website are very distinctive and representative of their work and appealing, and as a viewer, I think the design of the website is a great success, with beautiful images and a lively written introduction that entices me to eagerly book my tickets for the visit via the link.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 6. How does the interactive experience communicate this primary goal?</h3>
+              <p><li>The beautiful images and vivid text, as well as the link to buy tickets that appeared time and time again on different pages, reminded the user of the end date of the exhibition, each time reminding the user that the time is now and never will be.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 7. What is your impression of how the experience should be interacted with over time? (For how long and how many different times)</h3>
+              <p><li>I think the interaction of the whole webpage is reasonable.  First of all is the main image of the webpage. It has two kinds of interactions, one is to turn the page automatically every 5 seconds, and the other is that the user can manually click on the button to switch to turn the page. Since I am an impatient person, I choose to manually click the button to switch the page quickly so that I can browse the whole main picture in a short while. Secondly, when users scroll down the page, the main image of each exhibition in the middle of the page will move slightly, which is a very clever design to attract users' eyes because we are always attracted by the target of the campaign, if these main images will not move, users will not be attracted by them so easily. At the same time, the subtitle of each exhibition is also paired with tiny arrows. When I place my mouse on the main image of the exhibition or on the title, the small arrow in front of the subtitle will have a micro-animation. These clever interactions enticed me to peruse them and click on them.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 8. How does the interactive experience communicate how it should be interacted with over time?</h3>
+              <p><li>When I clicked through to the NGV's website, I realized that when I wanted to contact the exhibitions, I couldn't quickly and efficiently find a way to do so, such as human or online customer service. When I see these exhibitions and have questions about them, what I desperately need is for the human customer service feature to appear in front of my eyes, so I think it should be placed at the top of the homepage. At the same time, I found that a great deal of what appears in the website is images and text, whereas nowadays, people will prefer to watch videos rather than simple text. Because video is more intuitive than text and pictures, adding some video introduction can attract more attention to the exhibition.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 9. What other media forms (digital or otherwise) does the experience reference?</h2>
+              <p><li>The experience also references works of art that are exhibited as installations, paintings, or digital photographs, which are made available in digital form on the website, allowing users to experience some of the free exhibitions without having to arrive at the NGV.</li></p>
+            </div>
+          
+            <div>
+              <h2>Question 10. What does this reference/s communicate to you about how you should act when engaging with your research experience?</h2>
+              <p><li>In art websites, there are usually a large number of main images that exist to represent an exhibition of a certain type of work or by a particular author. Next to or above each main image, there is usually a subtitle about the exhibition, which serves as a rough description of the exhibition, including the end time of the exhibition, how to buy tickets or the location of the exhibition, but not including other details. Sometimes, there are small arrows on the left or right sides of the subtitle, or above/below the subtitle, when users hover the mouse over the subtitle, the small arrow next to the title will move slightly, which is used to attract users' attention to click or pay attention to the content pointed by the arrow. When the user clicks on the arrow, the page jumps to the specified new content and pushes more accurate content and details to the user. Similarly, the main image of a web page has a similar interactive feature, changing color when the mouse hovers over it to indicate that there are more details about the exhibition to explore.
+                As far as the structure of the NGV website is concerned, the main images and captions are arranged on the page in an orderly manner from top to bottom and left to right, like taking a guidebook from a bookshelf, so it's easy to get a feel for each exhibition.</li></p>
+            </div>
+  
+            <div>
+              <h2>Question 11. What does this reference/s communicate to you about how you should feel when engaging with your research experience?</h2>
+              <p><li>Art gallary websites usually want to convey information about the latest exhibition and attract users to purchase tickets. The user's attention is drawn to the bold title of the exhibition and the beautiful main image, and the user is guided step by step through the text and images to learn about the exhibition and purchase a ticket to visit it on the website. Therefore, when I browsed the website, I was deeply attracted by Rembrandt's paintings and the title, and had an impulse to buy a ticket to visit the designated pavilion in the art museum immediately.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 12. What is the most frustrating part of the interaction to you and what makes that part frustrating?</h2>
+              <p><li>The most frustrating part of the interaction was that there were some individual exhibitions that were rather boring, such as LIAM YOUNG'S PLANETARY REDESIGN, which was an exhibit that had almost only a text description but not many pictures or any videos, and the web design of the exhibit was very simple, with only a white background and black text and no The design of this exhibition webpage is very simple, only white background and black text, no other colors or patterns as decoration or buttons or users to click to interact with it. Therefore, when I entered the webpage of this exhibition, it took me less than 20 seconds to exit.</li></p>
+            </div>
+
+            <div>
+              <h2>Question 13. What is the most satisfying part of the interaction to you and what makes that part satisfying?</h2>
+              <p>The most satisfying part of the interaction to me is the gallary's exhibition has a number of different visiting times that I can choose from. The most satisfying part of the gallery's website is that I can browse any of the exhibitions that have been shown before or upcoming exhibitions at any time, and for those that have passed, the exhibition's webpage is still there for yon to see.</p>
+            </div>
+        </div>
+    </div> 
 
   </body>
 
