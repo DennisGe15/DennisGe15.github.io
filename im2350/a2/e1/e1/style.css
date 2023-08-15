@@ -1,5 +1,6 @@
 h1,h2 {
-    align-items: center;
+    text-align: center;
+}
 
 .father1{
     width:860px;
