@@ -4,7 +4,7 @@ function resetFilter(){
   let recipeElements = Array.from(document.getElementsByClassName("RecipeBox"));
   console.log(recipeElements);
   for(let recipe of recipeElements){
-    recipe.style.display = "block";
+  recipe.style.display = "block";
   }
   let filterButtonsArray = Array.from(document.getElementsByClassName("FilterButton"));
   for(let filterButton of filterButtonsArray){

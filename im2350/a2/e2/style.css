@@ -3,7 +3,7 @@
 *{
   box-sizing: border-box;
   background-origin: border-box;
-  margin: 0;
+  margin: 10px;
 }
 
 /* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
@@ -11,10 +11,15 @@
 /* you're welcome to change the colours if you want or any of the other general page style */
 :root{
   --col-01:white;
-  --col-02:white;
-  --col-03:#5252ff;
+  --col-02:#5f6368;
+  --col-03:#8ab4fa;;
   --col-04:#b6e878;
   --border: 1px solid var(--col-02);
+}
+
+.uptitle{
+  font-size: large;
+  font-family: 'Tilt Prism', cursive;;
 }
 
 body{
@@ -23,8 +28,14 @@ body{
   background-color: var(--col-01);
   color: var(--col-02);
   padding: 2vw;
+  font-family: 'Tilt Prism', cursive;
+  font-size: large;
+  text-align: center;
 }
 
+.uptitle{
+  text-align: center;
+}
 /*
   i've set up a basic flexbox for each recipe container - you might want to change some of the 
   flex properties here on the container or on the individual flex items depending on how you want to style them
@@ -36,22 +47,36 @@ body{
 }
 
 .FilterSection{
-  
+  background-color: antiquewhite;
+
 }
 
 .FilterBox{
 
+
 }
 
 .FilterButton{
-
+  font-family: 'Tilt Prism', cursive;
+  font-size: medium;
+  border-radius: 12px;
+  color: black;
+  background-color: white;
+  border: 2px solid #4CAF50; /* Green */
+  transition-duration: 0.4s;
 }
+
+.FilterButton:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
 /* 
   this class will be applied to the last filter button clicked - remember because it's below .FilterButton it will overwrite
   any duplicate properties
 */
 .SelectedFilter{
-  background-color: red;
+  
 }
 
 .RecipeLink{
@@ -63,7 +88,6 @@ body{
 }
 
 .Author{
-  
 
 }
 

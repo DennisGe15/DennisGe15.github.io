@@ -10,63 +10,112 @@
 
     <script src="./filter.js" defer></script>
 
-    <title>Patrick's exercise 2</title>
+    <link>="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet"></link>
+    
+    <title>Dennis Ge's exercise 2</title>
 
   </head>
-
-  <body>
-
+ 
+  <div class="uptitle">
     <div>Interactive Media 1 Recipe List</div>
 
+  <body>
+   
     <hr /> 
 
     <div class="FilterSection">     
 
-      <details class="FilterBox">
+      <details class="FilterBox1">
         <summary>Author</summary>
         <button class="FilterButton" onclick='filterRecipes("author", "KLA", this)'>J. Kenji López-Alt</button>
         <button class="FilterButton" onclick='filterRecipes("author", "M", this)'>Maangchi</button>
         <button class="FilterButton" onclick='filterRecipes("author", "HM", this)'>Hetty McKinnon</button>
         <button class="FilterButton" onclick='filterRecipes("author", "CLM", this)'>Carla Lalli Music</button>
+        <button class="FilterButton" onclick='filterRecipes()'>All Author</button>
+      </details>
+
+      <details class="FilterBox2">
+        <summary>Publisher</summary>
+        <button class="FilterButton" onclick='filterRecipes("publisher", "ABC", this)'>ABC Everyday</button>
+        <button class="FilterButton" onclick='filterRecipes("publisher", "SE", this)'>Serious Eats</button>
+        <button class="FilterButton" onclick='filterRecipes("publisher", "M", this)'>Maangchi</button>
+        <button class="FilterButton" onclick='filterRecipes("publisher", "CLM", this)'>Carla Lalli Music</button>
+        <button class="FilterButton" onclick='filterRecipes()'>All Publisher</button>
+      </details>
+
+      <details class="FilterBox3">
+        <summary>Cuisine</summary>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "ITA", this)'>Italian</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "FU", this)'>Fusion</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "KR", this)'>Korean</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "WES", this)'>Western</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "USA", this)'>American</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "NF", this)'>North African</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "RUS", this)'>Russian</button>
+        <button class="FilterButton" onclick='filterRecipes("cuisine", "FR", this)'>French</button>
+        <button class="FilterButton" onclick='filterRecipes()'>All Cuisine</button>
+      </details>
+
+      <details class="FilterBox4">
+        <summary>Skill Level</summary>
+        <button class="FilterButton" onclick='filterRecipes("skill level", "L", this)'>Low</button>
+        <button class="FilterButton" onclick='filterRecipes("skill level", "M", this)'>Medium</button>
+        <button class="FilterButton" onclick='filterRecipes()'>All Skill Level</button>
+      </details>
+
+      <details class="FilterBox5">
+        <summary>Dietary</summary>
+        <button class="FilterButton" onclick='filterRecipes("dietary", "VEG", this)'>Vegetarian</button>
+        <button class="FilterButton" onclick='filterRecipes("dietary", "MB", this)'>Meat Based</button>
+        <button class="FilterButton" onclick='filterRecipes("dietary", "P", this)'>Pescatarian</button>
+        <button class="FilterButton" onclick='filterRecipes()'>All Dietary</button>
       </details>
 
     </div>
-
+  </div>
+   
     <hr /> 
 
     <!-- Recipe 1 -->
     <!-- these are fine to leave as <div>s -->
-    <div class="RecipeBox"
-         data-author="HM"
-    >
-    <!-- 
-      the above tag already has one custom data category called author - to get the filter to work with other catgories you'll need
-      to add in more data- attributes. see the link on modules for more details but remember you can call it whatever you like as 
-      long as it doesn't contain any capital letters
+      <div class="RecipeBox"
+           data-author="HM"
+           data-publisher="ABC"
+           data-cuisine="ITA"
+           data-skilllevel="L"
+           data-dietary="VEG"
+      >
+     <!-- 
+       the above tag already has one custom data category called author - to get the filter to work with other catgories you'll need
+       to add in more data- attributes. see the link on modules for more details but remember you can call it whatever you like as 
+       long as it doesn't contain any capital letters
     -->
 
-      <!-- don't forget to change out <div>s for the most appropriate element -->
-      <!-- i'll give you one for free - you should change the URL into an <a> tag, don't forget to add the appropriate attributes so it works as a link -->
-      <div class="RecipeLink">URL: https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338</div>
+     <!-- don't forget to change out <div>s for the most appropriate element -->
+     <!-- i'll give you one for free - you should change the URL into an <a> tag, don't forget to add the appropriate attributes so it works as a link -->
 
-      <div class="RecipeName">Recipe Name: Baked Puttanesca Risotto with Olives, Lemon and Parsley</div>
+      <div class="RecipeName"><h1>Recipe Name: Baked Puttanesca Risotto with Olives, Lemon and Parsley</h1></div>
 
       <div class="Author">Author: Hetty Mckinnon</div>
-      
+
+      <div class="RecipeLink">URL: <a href="https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338">ABC Everday-Baked Puttanesca Risotto with Olives, Lemon and Parsley</a ></div>
+   
       <!-- the RecipeImageContainer is actually fine to be left as a <div> - like the RecipeBox we're using it as a container for other elements -->
       <div class="RecipeImageContainer">
 
-        <img class="RecipeImg" src="./images/Puttanesca.jpg" alt="bowl of puttanesca pasta" />
+      <img class="RecipeImg" src="./images/Puttanesca.jpg" alt="bowl of puttanesca pasta" />
 
-        <p class="Attribution">
-          "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00/5996763901">Spaghetti Puttanesca con Tonno</a>" by 
-          <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00">avlxyz</a> is licensed under 
-          <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
-            CC BY-NC-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
-          </a>
+      <p class="Attribution">
+        "<a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00/5996763901">Spaghetti Puttanesca con Tonno</a>" by 
+        <a target="_blank" rel="noopener noreferrer" href="https://www.flickr.com/photos/10559879@N00">avlxyz</a> is licensed under 
+        <a target="_blank" rel="noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=openverse">
+          CC BY-NC-SA 2.0 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+          <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" style="height: 1em; margin-right: 0.125em; display: inline;"></img>
+        </a>
         </p>
 
       </div>
@@ -75,7 +124,7 @@
 
       <div class="Cuisine">Cuisine: Italian</div>
 
-      <div class="TimeToCook">Time to Cook: 0:10 prep time - 0:30 cook time</div>
+      <div class="TimeToCook">Time to Cook: 10 mins prep time. 30 mins cook time</div>
 
       <div class="SkillLevel">Skill Level: Low</div>
 
@@ -96,13 +145,17 @@
     <!-- Recipe 2 -->
     <div class="RecipeBox"
          data-author="HM"
+         data-publisher="ABC"
+         data-cuisine="ITA"
+         data-skilllevel="L"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.abc.net.au/everyday/caprese-salad-slow-roasted-tomato-rocket-basil-gremolata-recipe/10776846</div>
-
-      <div class="RecipeName">Recipe Name: Caprese Salad with Slow-Roasted Tomatoes, Rocket and Basil Gremolata</div>
+      <div class="RecipeName"><h1> Name: Caprese Salad with Slow-Roasted Tomatoes, Rocket and Basil Gremolata</h1></div>
 
       <div class="Author">Author: Hetty Mckinnon</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.abc.net.au/everyday/caprese-salad-slow-roasted-tomato-rocket-basil-gremolata-recipe/10776846">ABC Everday-Caprese Salad with Slow-Roasted Tomatoes, Rocket and Basil Gremolata</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -131,7 +184,7 @@
 
       <div class="Course">Course: Salad</div>
 
-      <div class="Servings">Servings: ?</div>
+      <div class="Servings">Servings: 2 to 4</div>
 
       <div class="Dietary">Dietary: Vegetarian</div>
 
@@ -146,16 +199,21 @@
     <!-- Recipe 3 -->
     <div class="RecipeBox"
          data-author="KLA"
+         data-publisher="SE"
+         data-cuisine="FU"
+         data-skilllevel="M"
+         data-dietary="VEG"
     >
+    
 
-      <div class="RecipeLink">URL: https://www.seriouseats.com/crispy-enoki-and-onion-fritter-with-thai-curry-mayo-recipe</div>
-
-      <div class="RecipeName">Recipe Name: Crispy Enoki and Onion Fritters with Thai Curry Mayo Recipe</div>
+      <div class="RecipeName"><h1>Recipe Name: Crispy Enoki and Onion Fritters with Thai Curry Mayo Recipe</h1></div>
 
       <div class="Author">Author: J. Kenji López-Alt</div>
 
-      <div class="RecipeImageContainer">
+      <div class="RecipeLink">URL: <a href="https://www.seriouseats.com/crispy-enoki-and-onion-fritter-with-thai-curry-mayo-recipe">Serious Eats-Crispy Enoki and Onion Fritters with Thai Curry Mayo Recipe</a></div>
 
+      <div class="RecipeImageContainer">
+ 
         <img class="RecipeImg" src="./images/Enoki.jpg" alt="enoki mushrooms" />
 
         <p class="Attribution">
@@ -189,20 +247,24 @@
 
       <div class="DateUpdated">Date Updated: Aug. 30, 2018</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 4 -->
     <div class="RecipeBox"
          data-author="M"
+         data-publisher="M"
+         data-cuisine="KR"
+         data-skilllevel="M"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.maangchi.com/recipe/jjinppang</div>
-
-      <div class="RecipeName">Recipe Name: Fluffy Steamed Buns filled with Sweet Red Beans</div>
+      <div class="RecipeName"><h1>Name: Fluffy Steamed Buns filled with Sweet Red Beans</h1></div>
 
       <div class="Author">Author: Maangchi</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.maangchi.com/recipe/jjinppang">Maangchi-Fluffy Steamed Buns filled with Sweet Red Beans</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -224,7 +286,7 @@
 
       <div class="Cuisine">Cuisine: Korean</div>
 
-      <div class="TimeToCook">Time to Cook: ~ 11 hours preperation. 15 mins to cook</div>
+      <div class="TimeToCook">Time to Cook: 11 hours prep time. 15 mins cook time</div>
 
       <div class="SkillLevel">Skill Level: Medium</div>
 
@@ -238,20 +300,25 @@
 
       <div class="DateUpdated">Date Updated: August 11, 2021</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 5 -->
     <div class="RecipeBox"
          data-author="KLA"
+         data-publisher="SE"
+        data-cuisine="WES"
+         data-skilllevel="L"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe</div>
-
-      <div class="RecipeName">Recipe Name: The Food Lab's Chocolate Chip Cookies</div>
-
+  
+      <div class="RecipeName"><h1>Recipe Name: The Food Lab's Chocolate Chip Cookies</h1></div>
+      
       <div class="Author">Author: J. Kenji López-Alt</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe">Serious Eats-The Food Lab's Chocolate Chip Cookies</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -272,7 +339,7 @@
 
       <div class="Cuisine">Cuisine: Western</div>
 
-      <div class="TimeToCook">Time to Cook: 45mins prep. 35mins to cook</div>
+      <div class="TimeToCook">Time to Cook: 45 mins prep time. 35 mins cook time</div>
 
       <div class="SkillLevel">Skill Level: Low</div>
 
@@ -286,20 +353,25 @@
 
       <div class="DateUpdated">Date Updated: Sep. 16, 2022</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 6 -->
     <div class="RecipeBox"
          data-author="KLA"
+         data-publisher="SE"
+         data-cuisine="FU"
+         data-skilllevel="L"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.seriouseats.com/grilled-cheese-with-kimchi-recipe</div>
 
-      <div class="RecipeName">Recipe Name: Grilled Cheese With Kimchi Recipe</div>
+      <div class="RecipeName"><h1>Recipe Name: Grilled Cheese With Kimchi Recipe</h1></div>
 
       <div class="Author">Author: J. Kenji López-Alt</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.seriouseats.com/grilled-cheese-with-kimchi-recipe">Serious Eats-Grilled Cheese With Kimchi Recipe</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -336,20 +408,24 @@
 
       <div class="DateUpdated">Date Updated: Sep. 21, 2022</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 7 -->
     <div class="RecipeBox"
          data-author="CLM"
+         data-publisher="CLM"
+         data-cuisine="USA"
+         data-skilllevel="M"
+         data-dietary="MB"
     >
 
-      <div class="RecipeLink">URL: https://www.patreon.com/posts/recipe-hands-off-60369279</div>
-
-      <div class="RecipeName">Recipe Name: Hands-Off Pork and Beans</div>
+      <div class="RecipeName"><h1>Recipe Name: Hands-Off Pork and Beans</h1></div>
 
       <div class="Author">Author: Carla Lalli Music</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.patreon.com/posts/recipe-hands-off-60369279">Carla Lalli Music-Recipe Name: Hands-Off Pork and Beans</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -371,7 +447,7 @@
 
       <div class="Cuisine">Cuisine: American</div>
 
-      <div class="TimeToCook">Time to Cook: overnight preperation. 4 hours to cook</div>
+      <div class="TimeToCook">Time to Cook: overnight prep time. 4 hours cook time</div>
 
       <div class="SkillLevel">Skill Level: Medium</div>
 
@@ -385,20 +461,25 @@
 
       <div class="DateUpdated">Date Updated: N/A</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 8 -->
     <div class="RecipeBox"
          data-author="M"
+         data-publisher="M"
+         data-cuisine="KR"
+         data-skilllevel="L"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.maangchi.com/recipe/kimchijeon</div>
-
-      <div class="RecipeName">Recipe Name: Kimchi Pancake</div>
+  
+      <div class="RecipeName"><h1>Recipe Name: Kimchi Pancake</h1></div>
 
       <div class="Author">Author: Maangchi</div>
+
+      <div class="RecipeLink">URL:<a href="https://www.maangchi.com/recipe/kimchijeon">Maangchi-Recipe Name: Kimchi Pancake</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -419,7 +500,7 @@
 
       <div class="Cuisine">Cuisine: Korean</div>
 
-      <div class="TimeToCook">Time to Cook: 15mins</div>
+      <div class="TimeToCook">Time to Cook: 15 mins</div>
 
       <div class="SkillLevel">Skill Level: Low</div>
 
@@ -433,20 +514,24 @@
 
       <div class="DateUpdated">Date Updated: August 1, 2021</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 9 -->
     <div class="RecipeBox"
          data-author="KLA"
+         data-publisher="SE"
+         data-cuisine="NF"
+         data-skill level="M"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.seriouseats.com/shakshuka-north-african-shirred-eggs-tomato-pepper-recipe</div>
-
-      <div class="RecipeName">Recipe Name: Shakshuka (North African–Style Poached Eggs in Spicy Tomato Sauce)</div>
+      <div class="RecipeName"><h1>Recipe Name: Shakshuka (North African-Style Poached Eggs in Spicy Tomato Sauce)</h1></div>
 
       <div class="Author">Author: J. Kenji López-Alt</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.seriouseats.com/shakshuka-north-african-shirred-eggs-tomato-pepper-recipe">Serious Eats-Shakshuka (North African-Style Poached Eggs in Spicy Tomato Sauce)</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -481,20 +566,26 @@
 
       <div class="DateUpdated">Date Updated: Aug. 10, 2022</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 10 -->
     <div class="RecipeBox"
          data-author="CLM"
+         data-publisher="CLM"
+         data-cuisine="ITA"
+         data-skilllevel="L"
+         data-dietary="P"
     >
 
-      <div class="RecipeLink">URL: https://www.patreon.com/posts/pasta-with-sauce-45042575</div>
+  
 
-      <div class="RecipeName">Recipe Name: Spaghetti with Melted Cauliflower Sauce</div>
+      <div class="RecipeName"><h1>Recipe Name: Spaghetti with Melted Cauliflower Sauce</h1></div>
 
       <div class="Author">Author: Carla Lalli Music</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.patreon.com/posts/pasta-with-sauce-45042575">Carla Lalli Music-Spaghetti with Melted Cauliflower Sauce</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -529,20 +620,25 @@
 
       <div class="DateUpdated">Date Updated: N/A</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 11 -->
     <div class="RecipeBox"
          data-author="M"
+         data-publisher="M"
+         data-cuisine="KR"
+         data-skilllevel="M"
+         data-dietary="MB"
     >
 
-      <div class="RecipeLink">URL: https://www.maangchi.com/recipe/yangnyeom-tongdak</div>
-
-      <div class="RecipeName">Recipe Name: Sweet, Sour, & Spicy Korean Fried Chicken</div>
+      
+      <div class="RecipeName"><h1>Recipe Name: Sweet, Sour, & Spicy Korean Fried Chicken</h1></div>
 
       <div class="Author">Author: Maangchi</div>
+
+      <div class="RecipeLink">URL: <a herf "https://www.maangchi.com/recipe/yangnyeom-tongdak">Maangchi-Recipe Name: Sweet, Sour, & Spicy Korean Fried Chicken</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -565,7 +661,7 @@
 
       <div class="Cuisine">Cuisine: Korean</div>
 
-      <div class="TimeToCook">Time to Cook: 45-50 minutes</div>
+      <div class="TimeToCook">Time to Cook: 45-50 mins</div>
 
       <div class="SkillLevel">Skill Level: Medium</div>
 
@@ -579,20 +675,25 @@
 
       <div class="DateUpdated">Date Updated: August 3, 2021</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 12 -->
     <div class="RecipeBox"
          data-author="KLA"
+         data-publisher="SE"
+         data-cuisine="RUS"
+         data-skilllevel="M"
+         data-dietary="MB"
     >
 
-      <div class="RecipeLink">URL: https://www.seriouseats.com/ultimate-beef-stroganof-recipe</div>
 
-      <div class="RecipeName">Recipe Name: The Ultimate Beef Stroganoff Recipe</div>
+      <div class="RecipeName"><h1>Recipe Name: The Ultimate Beef Stroganoff Recipe</h1></div>
 
       <div class="Author">Author: J. Kenji López-Alt</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.seriouseats.com/ultimate-beef-stroganof-recipe">Manngchi-The Ultimate Beef Stroganoff Recipe</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -629,20 +730,25 @@
 
       <div class="DateUpdated">Date Updated: Aug. 27, 2020</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
     
     <!-- Recipe 13 -->
     <div class="RecipeBox"
          data-author="CLM"
+         data-publisher="CLM"
+         data-cuisine="FR"
+         data-skilllevel="M"
+         data-dietary="VEG"
     >
 
-      <div class="RecipeLink">URL: https://www.patreon.com/posts/recipe-vanilla-60100711</div>
 
-      <div class="RecipeName">Recipe Name: Vanilla-Brown Butter Pear Tart</div>
+      <div class="RecipeName"><h1>Recipe Name: Vanilla-Brown Butter Pear Tart</h1></div>
 
       <div class="Author">Author: Carla Lalli Music</div>
+
+      <div class="RecipeLink">URL: <a href="https://www.patreon.com/posts/recipe-vanilla-60100711">Serious Eats-Vanilla-Brown Butter Pear Tart</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -665,7 +771,7 @@
 
       <div class="Cuisine">Cuisine: French</div>
 
-      <div class="TimeToCook">Time to Cook: ~ 3 hours</div>
+      <div class="TimeToCook">Time to Cook: 3 hours</div>
 
       <div class="SkillLevel">Skill Level: Medium</div>
 
@@ -686,13 +792,17 @@
     <!-- Recipe 14 -->
     <div class="RecipeBox"
          data-author="HM"
+         data-publisher="ABC"
+         data-cuisine="FU"
+         data-skilllevel="L"
+         data-dietary="VEG"
     >
-
-      <div class="RecipeLink">URL: https://www.abc.net.au/everyday/vegetarian-carbonara-with-mushrooms-and-miso/12426392</div>
 
       <div class="RecipeName">Recipe Name: Vegetarian Carbonara with Mushrooms, Miso and Parmesan</div>
 
       <div class="Author">Author: Hetty Mckinnon</div>
+      
+      <div class="RecipeLink">URL: <a href="https://www.abc.net.au/everyday/vegetarian-carbonara-with-mushrooms-and-miso/12426392">ABC Everyday-Vegetarian Carbonara with Mushrooms, Miso and Parmesan</a></div>
 
       <div class="RecipeImageContainer">
 
@@ -714,7 +824,7 @@
 
       <div class="Cuisine">Cuisine: Fusion</div>
 
-      <div class="TimeToCook">Time to Cook: 0:15 prep time - 0:15 cook time</div>
+      <div class="TimeToCook">Time to Cook: 15 mins prep time. 15 mins cook time</div>
 
       <div class="SkillLevel">Skill Level: Low</div>
 
@@ -728,7 +838,7 @@
 
       <div class="DateUpdated">Date Updated: 26 Feb 2021</div>
 
-      <div class="SpecialEquipment">Special Equipment: </div>
+      <div class="SpecialEquipment">Special Equipment: N/A</div>
 
     </div>
 
