@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!-- No attribution required -->
+
+<!--
+<p class="attribution">
+  "<a target"_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia/sounds/516902">Ambient wa 
+  <a target"_blank" rel="noopener noreferrer" href="https://freesound.org/people/Erokia">Erokia</a> is licensed un
+  <a target"_blank" rel-"noopener noreferrer" href="https://Creativecommons.org/llcenses/by-nc/4.0/?ref=openverse"
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1em; margin-right: 0.125em; 
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1em; margin-right: 0.125em; 
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="height: 1em; margin-right: 0.125em; 
+  </a>.
+</p> 
+-->
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDEO ART PLAYER</title>
+    <!-- please add a favicon -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="playerControls.js" defer></script> -->
+    <script src="playerControls.js" defer></script>
+  
+  </head>
+
+  <body>
+
+    <h1>VIDEO ART</h1>
+
+    <!-- this element holds all of the media player -->
+    <div class="video-player-wrapper">
+      <!-- this element holds the video element and the overlay -->
+      <div class="video-element-wrapper">
+
+        <video id="videoElement" controls width="640" height="340"> 
+          <source src="https://rr1---sn-npoeenek.googlevideo.com/videoplayback?expire=1695040791&ei=tvAHZaWcPMiqlQTzp6foDA&ip=8.217.31.10&id=o-AGtL-ZnvUwsq-FAqzc8sl1BGmNdZmE9w0bskUFy6Wsd_&itag=18&source=youtube&requiressl=yes&spc=UWF9fy86gEbHMqdd0BZ19JTBO6rCnfoALG0KgVQjxg&vprv=1&svpuc=1&mime=video%2Fmp4&ns=hP6El_SBGRvSLBgNKSff5y4P&cnr=14&ratebypass=yes&dur=120.395&lmt=1665321618555267&fexp=24007246&c=WEB&txp=1438434&n=Y5r0mTaPXNoxgw&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhAJbER-Cl5bIZ8MnZc5aCPPi6HuEOaUVt4tCoL8zBuQrpAiBdUfh7yYmXA6LPThMnP4PKKllx8AjfVAs-UYBRtnMyow%3D%3D&redirect_counter=1&cm2rm=sn-i3b6k7z&req_id=f2e46d3f2527a3ee&cms_redirect=yes&mh=-J&mip=2403:4800:345d:1a01:59dd:2838:516b:26d4&mm=34&mn=sn-npoeenek&ms=ltu&mt=1695018760&mv=m&mvi=1&pl=36&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAKRiY7tpyHdL2XkGkgAf9N1A0yHcwTu98u2D3FyE-lCzAiEAiGmDPb6yMiYhRnT-p4aLFzcOuY5KRu6j3EJhudpEIpQ%3D" type="video/mp4">
+        </video>
+        
+        <img id="videoPlayOverlay" src="./icons/play.svg">
+
+      </div>
+      <!-- this element holds all of the custom controls -->
+      <div class="video-controls-wrapper" id="controlsWrapper">
+
+        <button class= "video-control-button" id="rewindButton"></button>
+
+        <button class="video-control-button" id="playButton"></button>
+
+        <button class= "video-control-button" id="fastForwardButton"></button>
+
+        <progress class="video-progress-bar" id="progressBar" value="0"></progress>
+
+        <button class= "video-control-button" id="loopButton"></button>
+
+        <button class= "video-control-button" id="muteButton"></button>
+
+        <button class= "video-control-button" id="fullScreenButton"></button>
+
+       
+
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

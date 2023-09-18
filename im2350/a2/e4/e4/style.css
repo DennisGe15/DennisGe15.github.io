@@ -1,0 +1,158 @@
+
+As a student studying design, I chose video art as the theme of my webpage. After choosing this theme, I searched the internet for many videos on related topics, but how to insert the videos I found from the internet into my webpage perfectly was an extremely difficult problem. At first I thought the biggest problem should be the button setting, but after I selected the right video and copied the link directly to put it into my html, I realized the fact is not as simple as I thought, the video I selected could not be played at all. Luckily, through searching in the web, I finally found a tool that can convert YouTube videos to be embedded in html.
+When designing my webpage, I first chose the background color of the whole webpage according to the video I embedded, I chose #212427 as the background color because this color is more advanced than pure black. I also used my favorite silver white #f1f0ed as the color of my webpage title.
+Next I started laying out my video feature. I looked closely at different video players and eventually, inspired by bilibili, a video player, I set the play button on the left side, and I also set the fast forward and rewind buttons on the left and right side of the play button, respectively, so that it looks very coordinated. I set the fast forward button to 10 seconds forward for each press and also set the rewind button to 10 seconds backward for each press. To the right of the fast forward button I placed the progress bar, and since this takes up a lot of area, I centered it to make the layout look more balanced. To the right of the progress bar I placed the loop button, the mute button and the full screen button. the reason I placed the full screen button on the far right is so that the user can find it more quickly.
+
+
+*{
+  box-sizing: border-box;
+  background-origin: border-box;
+}
+
+body {
+  height: 800px;
+  align-items: center;
+  justify-content: center;
+  background: #212427;
+}
+
+h1 {
+  font-size: 2.8em;
+  text-align:center;
+  color: #f1f0ed;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+
+/* Basis for colour palette comes from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
+/* you're welcome to change the colours if you want or any of the other general page style */
+:root{
+  --col-01:#222323;
+  --col-02:#f0f6f0;
+  --col-03:#5252ff;
+  --col-04:#b6e878;
+  --col-05:#bcbdbc;
+  --col-06:#6f6f6f;
+  --border: 1px solid var(--col-02);
+}
+
+.video-player-wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* becuase I want to overlay the play icon on the video they need to be in their own wrapper */
+.video-element-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+#videoElement{
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+#videoPlayOverlay{
+  width: 8rem;
+  height: 8rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: center;
+  opacity: 0.6;
+  display: none;
+  pointer-events: none;
+}
+
+.video-controls-wrapper{
+  display: flex;
+  justify-content: center;
+}
+/* this overwrites the above display:flex - something which is then undone when the JS loads */
+#controlsWrapper{
+  display: none;
+}
+
+.video-control-button{
+  width: 2rem;
+  height: 2rem;
+  padding: .1rem;
+  border: none;
+  cursor: pointer;
+}
+.video-control-button:hover{
+  background-color: var(--col-05);
+}
+.video-control-button:active{
+  background-color: var(--col-06);
+}
+.button-icon{
+  pointer-events: none;
+}
+
+#playButton{
+  background-image: url('./icons/play.svg');
+}
+
+#muteButton{
+  background-image: url('./icons/mute.svg');
+}
+
+#fullScreenButton{
+  background-image: url('./icons/fullScreen.svg');
+}
+
+#loopButton{
+  background-image: url('./icons/loop.svg');
+}
+
+#rewindButton{
+  background-image: url('./icons/rewind.svg');
+}
+
+#fastForwardButton{
+  background-image: url('./icons/fastForward.svg');
+}
+
+.video-progress-bar{
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 2rem;
+  flex-grow: 1;
+  cursor: pointer;
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+}
+::-moz-progress-bar {
+  background-color: var(--col-02);
+}
+
+::-webkit-progress-bar {
+  background-color: var(--col-01);
+  box-shadow: 0 1px 2px var(--col-02) inset;
+}
+::-webkit-progress-value {
+  background-color: var(--col-02);
+}
+
+.timeline-loading{
+  background-image: -moz-repeating-linear-gradient(45deg, var(--col-03) 0% 2%, transparent 2% 4%, red 4%);
+  background-size: 200% 100%;
+  animation: loadingAnimation 4s linear infinite;
+}
+
+@keyframes loadingAnimation {
+  100%{
+    background-position: 50% 0%;
+  }
+}
