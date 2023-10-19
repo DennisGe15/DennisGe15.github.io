@@ -233,8 +233,8 @@ a {
 }
 
 img:hover{
-	transition: all 1s;
-	transform: scale(1.1);
+  transition: all 1s;
+  transform: scale(1.1);
 }
 /* This is an interesting little interactive effect, just two short snippets of code that allows the mouse to hover over an image to trigger a zoom. 
 The purpose of this is to allow the user to pay more attention to these images, I set it to zoom in ten per cent in the hope that the user will find the image and try to click on it. */
