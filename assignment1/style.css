@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+}
+
+body {
+    padding: 0%;
+    height: 100%;
+    background-image: url('./Mins Portfolio.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.text {
+    position: relative;
+    top: 50px;
+    margin: 0 20px;
+    background-color:  rgba(255,255,255,0.8);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#background-1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.5) ;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+#Welcome_box {
+    width: 61%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.8);
+    margin: auto;
+    margin-top: 120px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background-position: center;
+    border: 1px solid #201c1c60;
+  }
+
+#question_box {
+    width: 60%;
+    height: fit-content;
+    background-color: #0000008b;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 50px 50px;
+    background-position: center;
+    margin-bottom: 100px;
+  }
+
+#botton_box {
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.8);
+    margin: auto;
+    margin-bottom: 120px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background-position: center;
+    border: 1px solid #201c1c60;
+}
+h1 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+    margin-bottom: 20px;
+}
