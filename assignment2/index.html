@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dennis' Interactive Media Assignment 2</title>
+    <!-- add the font family of your choice -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header">
+            <h1>Dennis' Music video</h1>
+            <img class="logo" src="./DennisWebLogo.jpg"></img>
+        </div>
+    <!-- I added my personal Logo at the top of the page as part of the overall decor of the page. -->
+    </header>
+
+    <!-- First of all, I checked YouTube's video function buttons layout scheme and found that their video function buttons layout order from left to right are “play-pause button, fast-forward-skip button, mute button, volume slider, progress-bar, autoplay switch, subtitle&close captions button, settings button, miniplayer button, cinema mode switch, airplay button, and fullscreen button.”
+    From these two most popular button layouts for video web pages, I learned that the button layouts they share include placing the play-pause button and fast-forward skip button in the lower left corner of the feature area, the progress-bar in the center of the feature area underneath the video, and the miniplayer button and fullscreen button in the lower right corner of the feature area. 
+    So I decided to mimic the common functionality of these two layouts and add one or two additional buttons on top of them that I thought would be more user-friendly. -->
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <!-- Media Player Section -->
+        <div class="media-player">
+            <video id="custom-video-player" controls>
+                <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4"
+                    type="video/mp4" />
+            </video>
+            <div class="custom-controls">
+                <button id="rewind-btn" onclick="togglerewind30seconds()">
+                    <img id="rewind-img" src="https://img.icons8.com/?size=100&id=9988&format=png&color=000000"
+                        alt="Rewind Button" width="36" height="24" />
+                </button>
+                <button id="play-pause-btn" onclick="togglePlayPause()">
+                    <img id="play-pause-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" 
+                        alt="Play Button" width="36" height="24" />
+                </button>
+                <!-- add the missing buttons or functionality here -->
+                <button id="fast-forward-btn" onclick="toggleforward30seconds()">
+                    <img id="fast-forward-img" src="https://img.icons8.com/?size=100&id=9991&format=png&color=000000"
+                        alt="Fast-forward Button" width="36" height="24" />
+                </button>
+                <div class="progress-bar">
+                    <span id="progress-bar-fill"></span>
+                </div>
+                <button id="mute-unmute-btn">
+                    <img id="mute-unmute-img" src="https://img.icons8.com/?size=100&id=41563&format=png&color=000000"
+                        alt="mute-unmute Button" width="36" height="24" />
+                </button>
+                <div class="volume control">
+                    <p> volume control </p>
+                    <input id="volume-control-bar" type="range" min="0" max="1" step="0.01" value="0.5">
+                </div>
+                <button id="fullscreen-btn">
+                    <img id="fullscreen-img" src="https://img.icons8.com/?size=100&id=38034&format=png&color=000000"
+                        alt="Fullscreen Button" width="36" height="24" />
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Additional Content Section -->
+        <div style="display: flex;justify-content: space-between;align-items: center;">
+            <section>
+                <h2>This page was designed by Dennis Ge.</h2>
+                <p>Video source: https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4.</p>
+                <!-- Add more content as needed -->
+            </section>
+        <!-- I add a like button here is because I took design inspiration from the YouTube video page. Therefore I putted the button on the right side of the video.  -->
+            <div class="custom-controls" style="width: 250px;display: flex;justify-content: flex-start;">
+                <button id="like-btn">
+                    <img id="like-img" src="https://img.icons8.com/?size=100&id=83166&format=png&color=000000"
+                        alt="Like Button" width="23" height="24" />
+                </button>
+                <span>Total likes: <span id="likes"></span></span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="ft">
+        <p>&copy; 2024 Dennis Ge. <br> Media Player Website. All rights reserved.</p>
+        <div class="ft-a">
+            <div class="ft-a-item">
+                <a href="https://icons8.com/icon/59862/play">Play</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icon/61012/pause">Pause</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icons/set/fast-forward">Fast-forward</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icon/9988/rewind">Rewind</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icon/9976/mute">Mute</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icon/41563/sound">Sound</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icon/38034/full-screen">Full-screen</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"><a href="https://icons8.com/icon/83166/facebook-like">Like</a> icon by
+                <a href="https://icons8.com">Icons8</a>
+            </div>
+            <div class="ft-a-item"></div>
+            <div class="ft-a-item"></div>
+        </div>
+        <!-- In the footer section, I wanted to neatly line up the comments of all the icons I use, so I wrote separate classes for each of them here, which makes it easier for me to align them up in two rows. -->
+
+        </div>
+    </footer>
+</body>
+
+</html>
