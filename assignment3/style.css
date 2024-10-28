@@ -1,0 +1,203 @@
+* {
+    margin: 0; /* Reset margin for all elements */
+    padding: 0; /* Reset padding for all elements */
+  }
+  
+  .timeline {
+    display: flex; /* Use flexbox for layout */
+    margin: 0 auto; /* Center the timeline */
+    flex-wrap: wrap; /* Allow wrapping of timeline items */
+    flex-direction: column; /* Stack items vertically */
+    position: relative; /* Positioning context for absolute children */
+  }
+  
+  .timeline__content {
+    display: flex; /* Use flexbox for layout */
+    width: 80%; /* Set content width to 80% of the parent */
+    margin: 0 auto; /* Center the content */
+    justify-content: space-between; /* Space between image and description */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .timeline__content-title {
+    font-weight: normal; /* Normal font weight */
+    font-size: 66px; /* Large font size for the title */
+    margin: -10px 0 0 0; /* Adjust top margin */
+    transition: 0.4s; /* Smooth transition for changes */
+    padding: 0 10px; /* Padding for better spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-family: "Oswald", sans-serif; /* Custom font for the title */
+    color: #fff; /* White text color */
+  }
+  
+  .timeline__img-box {
+    width: 45%; /* Set width for image box */
+  }
+  
+  .timeline__content-desc {
+    width: 45%; /* Set width for description box */
+    margin: 0; /* Reset margin */
+    font-size: 15px; /* Font size for description */
+    box-sizing: border-box; /* Include padding in width calculation */
+    color: rgba(255, 255, 255, 0.7); /* Semi-transparent white for readability */
+    font-family: "Roboto Condensed", sans-serif; /* Custom font for description */
+    font-weight: normal; /* Normal font weight */
+    line-height: 25px; /* Set line height for readability */
+  }
+  
+  .timeline-item {
+    padding: 105px 0; /* Vertical padding for timeline items */
+    opacity: 0.3; /* Start with low opacity */
+    filter: blur(2px); /* Initial blur effect */
+    transition: 0.5s; /* Smooth transition for state changes */
+    box-sizing: border-box; /* Include padding in width calculation */
+    width: 100%; /* Full width for timeline item */
+    display: flex; /* Use flexbox for layout */
+    position: relative; /* Positioning context for absolute children */
+    transform: translateY(-80px); /* Offset for animation */
+  }
+  
+  .timeline-item:before {
+    content: attr(data-text); /* Use custom data-text attribute for content */
+    letter-spacing: 3px; /* Add space between letters */
+    width: 100%; /* Full width for before content */
+    position: absolute; /* Position absolutely within the item */
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white text */
+    font-size: 13px; /* Font size for before content */
+    font-family: "Pathway Gothic One", sans-serif; /* Custom font for before content */
+    border-left: 2px solid rgba(255, 255, 255, 0.5); /* Left border for visual separation */
+    top: 70%; /* Position from the top */
+    margin-top: -5px; /* Adjust margin for vertical alignment */
+    padding-left: 15px; /* Left padding */
+    opacity: 0; /* Hidden initially */
+    right: calc(-100% - 56px); /* Position outside of the item */
+  }
+  
+  .timeline-item:nth-child(even) {
+    align-self: flex-end; /* Align even items to the right */
+  }
+  
+  .timeline-item:nth-child(even):before {
+    right: auto; /* Reset right positioning for even items */
+    text-align: right; /* Right-align text */
+    left: calc(-100% - 56px); /* Position outside of the item */
+    padding-left: 0; /* Reset left padding */
+    border-left: none; /* Remove left border */
+    border-right: 2px solid rgba(255, 255, 255, 0.5); /* Right border for visual separation */
+    padding-right: 15px; /* Right padding */
+  }
+  
+  .timeline-item--active {
+    opacity: 1; /* Full opacity when active */
+    transform: translateY(0); /* Reset transform to normal position */
+    filter: blur(0px); /* Remove blur effect */
+  }
+  
+  .timeline-item--active:before {
+    top: 50%; /* Center the before content vertically */
+    transition: 0.3s all 0.2s; /* Smooth transition for active state */
+    opacity: 1; /* Show before content when active */
+  }
+  
+  .timeline-item--active .timeline__content-title {
+    margin: -50px 0 20px 0; /* Adjust title margin when active */
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .timeline-item {
+      align-self: baseline !important; /* Align all items to the left on mobile */
+      width: 100%; /* Full width for mobile items */
+      padding: 0 30px 150px 80px; /* Adjust padding for mobile */
+    }
+  
+    .timeline-item:before {
+      left: 10px !important; /* Position left on mobile */
+      padding: 0 !important; /* Remove padding */
+      top: 50px; /* Adjust top positioning */
+      text-align: center !important; /* Center-align text on mobile */
+      width: 60px; /* Set width for before content on mobile */
+      border: none !important; /* Remove border on mobile */
+    }
+  
+    .timeline-item:last-child {
+      padding-bottom: 40px; /* Extra padding for last item */
+    }
+  }
+  
+  .timeline__img {
+    max-width: 100%; /* Ensure image does not exceed container width */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4); /* Shadow effect for depth */
+  }
+  
+  .timeline-container {
+    width: 100%; /* Full width for the container */
+    position: relative; /* Positioning context for absolute children */
+    padding: 80px 0; /* Vertical padding */
+    transition: 0.3s ease 0s; /* Smooth transition for changes */
+    background-attachment: fixed; /* Fixed background attachment */
+    background-size: cover; /* Cover the entire container */
+  }
+  
+  .timeline-container:before {
+    position: absolute; /* Absolute positioning for overlay */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width for overlay */
+    height: 100%; /* Full height for overlay */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+    content: ""; /* Empty content for pseudo-element */
+  }
+  
+  .timeline-header {
+    width: 100%; /* Full width for header */
+    text-align: center; /* Center-align header text */
+    margin-bottom: 80px; /* Space below the header */
+    position: relative; /* Positioning context for absolute children */
+  }
+  
+  .timeline-header__title {
+    color: #fff; /* White color for title */
+    font-size: 58px; /* Large font size for header title */
+    font-family: "Oswald", sans-serif; /* Custom font for title */
+    font-weight: normal; /* Normal font weight */
+    margin: 0; /* Reset margin */
+  }
+  
+  .timeline-header__subtitle {
+    color: rgba(255, 255, 255, 0.5); /* Semi-transparent white for subtitle */
+    font-family: "Pathway Gothic One", sans-serif; /* Custom font for subtitle */
+    font-size: 16px; /* Font size for subtitle */
+    letter-spacing: 5px; /* Spacing between letters */
+    margin: 10px 0 0 0; /* Adjust margins for spacing */
+    font-weight: normal; /* Normal font weight */
+  }
+  
+  .demo-footer {
+    padding: 60px 0; /* Vertical padding for footer */
+    text-align: center; /* Center-align footer text */
+  }
+  
+  .demo-footer a {
+    color: #999; /* Gray color for footer links */
+    display: inline-block; /* Inline block for layout */
+    font-family: Cardo; /* Custom font for footer links */
+  }
+  
+  #bottom-btn {
+    position: fixed; /* Fixed position for button */
+    bottom: 100px; /* Position from bottom */
+    z-index: 999; /* High z-index for layering */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+  }
+  
+  .timeline-header a {
+    color: rgb(145, 145, 145); /* Gray color for paragraph */
+    z-index: 999; /* High z-index for layering */
+    padding: 8px; /* Padding for better spacing */
+    border-radius: 20px; /* Rounded corners */
+    width: fit-content; /* Fit width to content */
+    background-color: #29292987; /* Semi-transparent background color */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-decoration: none;
+  }
